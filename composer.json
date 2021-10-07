@@ -14,5 +14,8 @@
     "bin": [
         "bin/brain-games"
     ],
+    "autoload": {
+        "files": ["./src/Cli.php"]
+      },
     "minimum-stability": "dev"
 }
