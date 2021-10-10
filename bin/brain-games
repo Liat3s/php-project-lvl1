@@ -6,4 +6,3 @@ require 'vendor/autoload.php';
 use function \Php\Project\Lvl1\Cli\greeting;
 
 greeting();
-

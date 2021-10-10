@@ -3,7 +3,10 @@
     "description": "First project in series",
     "type": "project",
     "require": {
-        "wp-cli/php-cli-tools": "dev-master"
+        "wp-cli/php-cli-tools": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
     },
     "license": "MIT",
     "authors": [
