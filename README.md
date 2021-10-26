@@ -8,4 +8,4 @@
 [![Linter](https://github.com/Liat3s/php-project-lvl1/actions/workflows/makefile.yml/badge.svg)](https://github.com/Liat3s/php-project-lvl1/actions/workflows/makefile.yml/badge.svg)
 
 ### Brain-even asciinema
-[![asciicast](https://asciinema.org/a/tGraYukRel50sVbqy4WEUotQf.svg)](https://asciinema.org/a/tGraYukRel50sVbqy4WEUotQf)
+[![asciicast](https://asciinema.org/a/FXcjtzLQYAKKn8GLaCfyGiyzX.svg)](https://asciinema.org/a/FXcjtzLQYAKKn8GLaCfyGiyzX)
