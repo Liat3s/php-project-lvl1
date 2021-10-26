@@ -7,6 +7,9 @@ brain-games: ## start Brain Games
 brain-even: ## start Brain-even
 	./bin/brain-even
 
+brain-calc: ## start Brain-calc
+	./bin/brain-calc
+
 validate: ## validate composer package
 	composer validate
 	
@@ -16,3 +19,4 @@ lint:	## Check linter
 set-rights: ## set rights to games
 	chmod +x bin/brain-games
 	chmod +x bin/brain-even
+	chmod +x bin/brain-calc
