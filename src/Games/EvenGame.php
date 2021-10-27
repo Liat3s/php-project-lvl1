@@ -23,7 +23,6 @@ function game()
     $userName = getUserAnswer("May I have your name?");
     showMessage("Hello, {$userName}!");
     showMessage('Answer "yes" if the number is even, otherwise answer "no".');
-
     $i = 1;
     $attempts = getUserAttemptsCount();
     $isCompleted = false;
@@ -34,22 +33,16 @@ function game()
         $isEvenText = $isEven ? 'yes' : 'no';
         showMessage('Question: ' . $questionNumber);
         $userAnswer = getUserAnswer('Your answer');
-
         if (isCorrect($isEvenText, $userAnswer)) {
             showMessage('Correct!');
-
-            if ($i == $attempts) {
-                $isCompleted = true;
-            }
+            $isCompleted = $i === $attempts;
         } else {
             showMessage("'" . $userAnswer . "'" . ' is wrong answer ;(. Correct answer was ' . "'" . $isEvenText . "'");
             showMessage('Let\'s try again, ' . $userName . '!');
             return 0;
         }
-
         $i += 1;
     }
-
     if ($isCompleted) {
         showMessage('Congratulations, ' . $userName . '!');
     }
