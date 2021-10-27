@@ -10,7 +10,7 @@ brain-even: ## start Brain-even
 brain-calc: ## start Brain-calc
 	./bin/brain-calc
 
-gcd: ## start Brain-gcd
+brain-gcd: ## start Brain-gcd
 	./bin/brain-gcd
 
 validate: ## validate composer package
