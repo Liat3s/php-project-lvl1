@@ -30,7 +30,7 @@ function showMessage(string $message): void
  *
  * @return String
  */
-function getUserAnswer($message): string
+function getUserAnswer(string $message): string
 {
     return \cli\prompt($message);
 }
@@ -67,7 +67,7 @@ function getUserAttemptsCount(): int
  *
  * @return Integer $result
  */
-function getCalcResult($operator, $num1, $num2): int
+function getCalcResult(string $operator, string $num1, string $num2): int
 {
     switch ($operator) {
         case '+':
@@ -77,4 +77,25 @@ function getCalcResult($operator, $num1, $num2): int
         case '*':
             return $num1 * $num2;
     }
+}
+
+/**
+ * Check answers equality and show message correct/incorrect
+ *
+ * @param $rightAnswer
+ * @param $userAnswer
+ * @param $userName
+ *
+ * @return Boolean
+ */
+function checkAnswers(string $rightAnswer, string $userAnswer, string $userName): bool
+{
+    $isCorrectAnswer = isCorrect($rightAnswer, $userAnswer);
+    if ($isCorrectAnswer) {
+        showMessage('Correct!');
+    } else {
+        showMessage("'" . $userAnswer . "'" . ' is wrong answer ;(. Correct answer was ' . "'" . $rightAnswer . "'");
+        showMessage('Let\'s try again, ' . $userName . '!');
+    }
+    return $isCorrectAnswer;
 }

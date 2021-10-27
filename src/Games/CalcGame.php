@@ -11,6 +11,7 @@ use function Php\Project\Lvl1\Engine\getUserAnswer;
 use function Php\Project\Lvl1\Engine\isCorrect;
 use function Php\Project\Lvl1\Engine\getUserAttemptsCount;
 use function Php\Project\Lvl1\Engine\getCalcResult;
+use function Php\Project\Lvl1\Engine\checkAnswers;
 
 /**
  * Core of Brain-even game
@@ -36,17 +37,12 @@ function game()
         $result = getCalcResult($randOperator, $randNumber1, $randNumber2);
         showMessage("Question: {$randNumber1} {$randOperator} {$randNumber2}");
         $userAnswer = getUserAnswer('Your answer');
-        if (isCorrect($result, $userAnswer)) {
-            showMessage('Correct!');
-            $isCompleted = $i === $attempts;
-        } else {
-            showMessage("'" . $userAnswer . "'" . ' is wrong answer ;(. Correct answer was ' . "'" . $result . "'");
-            showMessage('Let\'s try again, ' . $userName . '!');
-            return 0;
+        $isAnswersEqual = checkAnswers($result, $userAnswer, $userName);
+        if (!$isAnswersEqual) {
+            return false;
         }
+        $isCompleted = $i === $attempts;
         $i += 1;
     }
-    if ($isCompleted) {
-        showMessage('Congratulations, ' . $userName . '!');
-    }
+    showMessage('Congratulations, ' . $userName . '!');
 }
