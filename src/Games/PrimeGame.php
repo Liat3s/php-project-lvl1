@@ -3,13 +3,7 @@
 namespace Php\Project\Lvl1\Games\PrimeGame;
 
 // phpcs:disable
-$autoloadPath1 = __DIR__ . '/../../../autoload.php';
-$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
-if (file_exists($autoloadPath1)) {
-    require_once $autoloadPath1;
-} else {
-    require_once $autoloadPath2;
-}
+require 'vendor/autoload.php';
 // phpcs:enable
 
 use function Php\Project\Lvl1\Engine\showMessage;
