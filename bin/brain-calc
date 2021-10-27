@@ -3,6 +3,59 @@
 
 require 'vendor/autoload.php';
 
-use function Php\Project\Lvl1\Games\CalcGame\game;
+use function cli\line;
+use function cli\prompt;
+
+function game()
+{
+    \cli\line('Welcome to the Brain Game!');
+    $userName = \cli\prompt('May I have your name?');
+    \cli\line("Hello, %s!", $userName);
+    \cli\line('What is the result of the expression?');
+
+    $i = 0;
+    $attempts = 2;
+    $isCompleted =  false;
+    $mathOperators = ['+', '-', '*'];
+
+    while($i <= $attempts) {
+        $result = null;
+        $randOperator = $mathOperators[rand(0,2)];
+        $rand1 = rand(1, 10);
+        $rand2 = rand(1, 10);
+
+        switch($randOperator) {
+            case '+':
+            $result = $rand1 + $rand2;
+            break;
+            case '-':
+            $result = $rand1 - $rand2;
+            break;
+            case '*':
+            $result = $rand1 * $rand2;
+            break;
+        }
+
+        //print_r("\nres: {$result} \n");
+
+        \cli\line("Question: {$rand1} {$randOperator} {$rand2}");
+        $userAnswer = \cli\prompt('Your answer');
+
+        if ((int)$userAnswer === $result) {
+            \cli\line('Correct!');
+            $isCompleted = $i === $attempts;
+        } else {
+            \cli\line("'" .$userAnswer . "'" . ' is wrong answer ;(. Correct answer was ' . "'" . $result . "'");
+            \cli\line('Let\'s try again, ' . $userName . '!');
+            return false;
+        }
+
+        $i += 1;
+    }
+
+    if($isCompleted) {
+        \cli\line('Congratulations, ' . $userName . '!');
+    }
+}
 
 game();

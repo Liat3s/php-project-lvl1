@@ -20,12 +20,7 @@
         "bin/brain-calc"
     ],
     "autoload": {
-        "files": [
-            "./src/Cli.php",
-            "./src/Engine.php",
-            "./src/Games/EvenGame.php",
-            "./src/Games/CalcGame.php"
-        ]
+        "files": ["./src/Cli.php"]
       },
     "minimum-stability": "dev"
 }

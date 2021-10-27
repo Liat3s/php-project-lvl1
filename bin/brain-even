@@ -3,6 +3,46 @@
 
 require 'vendor/autoload.php';
 
-use function Php\Project\Lvl1\Games\EvenGame\game;
+use function cli\line;
+use function cli\prompt;
+
+function game()
+{
+    \cli\line('Welcome to the Brain Game!');
+    $userName = \cli\prompt('May I have your name?');
+    \cli\line("Hello, %s!", $userName);
+
+    \cli\line('Answer "yes" if the number is even, otherwise answer "no".');
+
+    $i = 0;
+    $attempts = 2;
+    $isCompleted = false;
+
+    while($i <= $attempts) {
+        $questionNumber = rand(0, 100);
+        $isEven = $questionNumber % 2 == 0;
+        $isEvenText = $isEven ? 'yes': 'no';
+        \cli\line('Question: ' . $questionNumber);
+        $userAnswer = \cli\prompt('Your answer');
+
+        if ($isEvenText === $userAnswer) {
+            \cli\line('Correct!');
+
+            if($i === $attempts) {
+                $isCompleted = true;
+            }
+        } else {
+            \cli\line("'" .$userAnswer . "'" . ' is wrong answer ;(. Correct answer was ' . "'" . $isEvenText . "'");
+            \cli\line('Let\'s try again, ' . $userName . '!');
+            return 0;
+        }
+
+        $i += 1;
+    }
+
+    if($isCompleted) {
+        \cli\line('Congratulations, ' . $userName . '!');
+    }
+}
 
 game();
