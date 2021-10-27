@@ -118,6 +118,11 @@ function gcd($a, $b)
         abs($b);
 }
 
+/**
+ * Generate line of numbers and make a hidden certain element
+ *
+ * @return Array
+ */
 function generatePrime()
 {
     $primeColl = [];
@@ -133,4 +138,24 @@ function generatePrime()
     $rightAnswer = $primeColl[$hiddenNumberIndex];
     $primeColl[$hiddenNumberIndex] = '..';
     return [implode(' ', $primeColl), $rightAnswer];
+}
+
+/**
+ * Check if number is prime
+ *
+ * @param Integer $number
+ *
+ * @return String
+ */
+function isPrime(int $number)
+{
+    if ($number < 2) {
+        return false;
+    }
+    for ($i = 3; $i < $number; $i += 2) {
+        if ($number % $i === 0) {
+            return 'no';
+        }
+    }
+    return 'yes';
 }
