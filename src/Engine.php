@@ -117,3 +117,20 @@ function gcd($a, $b)
         gcd($b, $r) :
         abs($b);
 }
+
+function generatePrime()
+{
+    $primeColl = [];
+    $step = rand(1, 9);
+    $min = rand(1, 100);
+    $primeCollCount = 10;
+    $hiddenNumberIndex = rand(0, 9);
+    $rightAnswer = null;
+    for ($i = 0; $i < $primeCollCount; $i++) {
+        $primeColl[] = $min + $step;
+        $min = $min + $step;
+    }
+    $rightAnswer = $primeColl[$hiddenNumberIndex];
+    $primeColl[$hiddenNumberIndex] = '..';
+    return [implode(' ', $primeColl), $rightAnswer];
+}

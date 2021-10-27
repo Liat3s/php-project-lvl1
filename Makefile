@@ -13,6 +13,9 @@ brain-calc: ## start Brain-calc
 brain-gcd: ## start Brain-gcd
 	./bin/brain-gcd
 
+brain-progression: ## start Brain-progression
+	./bin/brain-progression
+
 validate: ## validate composer package
 	composer validate
 	
@@ -24,3 +27,4 @@ set-rights: ## set rights to games
 	chmod +x bin/brain-even
 	chmod +x bin/brain-calc
 	chmod +x bin/brain-gcd
+	chmod +x bin/brain-progression

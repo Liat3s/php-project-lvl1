@@ -1,6 +1,6 @@
 {
     "name": "hexlet/code",
-    "description": "First project in series",
+    "description": "First project",
     "type": "project",
     "require": {
         "wp-cli/php-cli-tools": "0.11.*"
@@ -18,7 +18,8 @@
         "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
-        "bin/brain-gcd"
+        "bin/brain-gcd",
+        "bin/brain-progression"
     ],
     "autoload": {
         "files": [
@@ -26,7 +27,8 @@
             "./src/Engine.php",
             "./src/Games/EvenGame.php",
             "./src/Games/CalcGame.php",
-            "./src/Games/GcdGame.php"
+            "./src/Games/GcdGame.php",
+            "./src/Games/ProgressionGame.php"
         ]
       },
     "minimum-stability": "dev"
