@@ -1,3 +1,14 @@
+## Initial setup
+- Make install - Setup composer packages and requires dependencies.
+
+## Start games
+    - Make brain-games - start welcome game;
+    - Make brain-even - Определить четное/нечетное
+    - Make brain-calc - Подсчитать результат операции (сложение, вычитание, деление)
+    - Make brain-gcd - Найти наибольший общий делитель
+    - Make brain-progression - Найти пропущенное число в последовательности
+    - Make brain-prime - Является ли число простым
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Liat3s/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Liat3s/php-project-lvl1/actions)
 
