@@ -24,8 +24,6 @@ use function Php\Project\Lvl1\Engine\checkAnswers;
 
 /**
  * Core of Brain-calc game
- *
- * @return void|false
  */
 function game()
 {

@@ -23,8 +23,6 @@ use function Php\Project\Lvl1\Engine\checkAnswers;
 
 /**
  * Core of Brain-even game
- *
- * @return void|false
  */
 function game()
 {

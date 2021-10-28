@@ -24,8 +24,6 @@ use function Php\Project\Lvl1\Engine\generatePrime;
 
 /**
  * Core of Brain-pregression game
- *
- * @return void|false
  */
 function game()
 {

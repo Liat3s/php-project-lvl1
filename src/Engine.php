@@ -70,7 +70,7 @@ function getCalcResult(string $operator, int $num1, int $num2): int
 /**
  * Check answers equality and show message correct/incorrect
  */
-function checkAnswers(string $rightAnswer, string $userAnswer, string $userName): bool
+function checkAnswers(int $rightAnswer, int $userAnswer, string $userName): bool
 {
     $isCorrectAnswer = isCorrect($rightAnswer, $userAnswer);
     if ($isCorrectAnswer) {
