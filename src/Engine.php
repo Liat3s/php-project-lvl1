@@ -69,7 +69,7 @@ function getCalcResult(string $operator, int $num1, int $num2): int
             $result = $num1 * $num2;
             break;
     }
-    return (int)$result;
+    return $result;
 }
 
 /**
