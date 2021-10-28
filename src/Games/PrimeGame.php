@@ -25,7 +25,7 @@ use function Php\Project\Lvl1\Engine\isPrime;
 /**
  * Core of Brain-pregression game
  *
- * @return void
+ * @return void|false
  */
 function game()
 {

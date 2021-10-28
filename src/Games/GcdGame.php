@@ -26,7 +26,7 @@ use function Php\Project\Lvl1\Engine\gcd;
 /**
  * Core of Brain-calc game
  *
- * @return void
+ * @return void|false
  */
 function game()
 {

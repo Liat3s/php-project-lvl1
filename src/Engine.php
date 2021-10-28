@@ -22,10 +22,6 @@ const ATTEMPTS = 3;
 
 /**
  * Show game message
- *
- * @param String $message
- *
- * @return void
  */
 function showMessage(string $message): void
 {
@@ -34,10 +30,6 @@ function showMessage(string $message): void
 
 /**
  * Get user answer on question
- *
- * @param String $message
- *
- * @return String
  */
 function getUserAnswer(string $message): string
 {
@@ -46,11 +38,6 @@ function getUserAnswer(string $message): string
 
 /**
  * Check if user answer was correct
- *
- * @param $num1 - right answer
- * @param $num2 - user answer
- *
- * @return Boolean
  */
 function isCorrect(string $num1, string $num2): bool
 {
@@ -59,8 +46,6 @@ function isCorrect(string $num1, string $num2): bool
 
 /**
  * Get count of rounds
- *
- * @return Integer
  */
 function getUserAttemptsCount(): int
 {
@@ -69,14 +54,8 @@ function getUserAttemptsCount(): int
 
 /**
  * Calculate operation
- *
- * @param String $operator Math sign ('+', '-', '*')
- * @param String $num1     random number (0-10)
- * @param String $num2     random number (0-10)
- *
- * @return Integer $result
  */
-function getCalcResult(string $operator, string $num1, string $num2): int
+function getCalcResult(string $operator, int $num1, int $num2): int
 {
     switch ($operator) {
         case '+':
@@ -90,12 +69,6 @@ function getCalcResult(string $operator, string $num1, string $num2): int
 
 /**
  * Check answers equality and show message correct/incorrect
- *
- * @param $rightAnswer
- * @param $userAnswer
- * @param $userName
- *
- * @return Boolean
  */
 function checkAnswers(string $rightAnswer, string $userAnswer, string $userName): bool
 {
@@ -116,7 +89,7 @@ function checkAnswers(string $rightAnswer, string $userAnswer, string $userName)
 * between two numbers
 * tested against gmp_gcd()
 */
-function gcd($a, $b)
+function gcd(int $a, int $b): int
 {
     if ($a == 0 || $b == 0) {
         return abs(max(abs($a), abs($b)));
@@ -129,10 +102,8 @@ function gcd($a, $b)
 
 /**
  * Generate line of numbers and make a hidden certain element
- *
- * @return Array
  */
-function generatePrime()
+function generatePrime(): array
 {
     $primeColl = [];
     $step = rand(1, 9);
@@ -151,15 +122,11 @@ function generatePrime()
 
 /**
  * Check if number is prime
- *
- * @param Integer $number
- *
- * @return String
  */
-function isPrime(int $number)
+function isPrime(int $number): string
 {
     if ($number < 2) {
-        return false;
+        return 'no';
     }
     for ($i = 3; $i < $number; $i += 2) {
         if ($number % $i === 0) {
