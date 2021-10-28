@@ -24,7 +24,7 @@ use function Php\Project\Lvl1\Engine\checkAnswers;
 /**
  * Core of Brain-even game
  */
-function game(): any
+function game(): void
 {
     showMessage("Welcome to the Brain Game!");
     $userName = getUserAnswer("May I have your name?");
@@ -42,7 +42,7 @@ function game(): any
         $userAnswer = getUserAnswer('Your answer');
         $isAnswersEqual = checkAnswers($isEvenText, $userAnswer, $userName);
         if (!$isAnswersEqual) {
-            return false;
+            return;
         }
         $isCompleted = $i === $attempts;
         $i += 1;
