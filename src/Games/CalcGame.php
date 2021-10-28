@@ -25,7 +25,7 @@ use function Php\Project\Lvl1\Engine\checkAnswers;
 /**
  * Core of Brain-calc game
  */
-function game()
+function game(): any
 {
     showMessage("Welcome to the Brain Game!");
     $userName = getUserAnswer("May I have your name?");
@@ -44,7 +44,7 @@ function game()
         $result = getCalcResult($randOperator, $randNumber1, $randNumber2);
         showMessage("Question: {$randNumber1} {$randOperator} {$randNumber2}");
         $userAnswer = getUserAnswer('Your answer');
-        $isAnswersEqual = checkAnswers($result, $userAnswer, $userName);
+        $isAnswersEqual = checkAnswers((string)$result, $userAnswer, $userName);
         if (!$isAnswersEqual) {
             return false;
         }

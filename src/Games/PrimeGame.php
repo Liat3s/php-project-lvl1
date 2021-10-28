@@ -25,7 +25,7 @@ use function Php\Project\Lvl1\Engine\isPrime;
 /**
  * Core of Brain-pregression game
  */
-function game()
+function game(): any
 {
     showMessage("Welcome to the Brain Game!");
     $userName = getUserAnswer("May I have your name?");
