@@ -57,7 +57,7 @@ function getUserAttemptsCount(): int
  */
 function getCalcResult(string $operator, int $num1, int $num2): int
 {
-    $result = null;
+    $result = 0;
     switch ($operator) {
         case '+':
             $result = $num1 + $num2;
@@ -69,7 +69,7 @@ function getCalcResult(string $operator, int $num1, int $num2): int
             $result = $num1 * $num2;
             break;
     }
-    return $result;
+    return (int)$result;
 }
 
 /**
